@@ -4,7 +4,7 @@
   gather_facts: false
   vars:
     num_messages: 50
-    added_payload: "{{ added_payload|default(0) * 'x' }}"
+    added_payload_string: "{{ added_payload|default(0)|int * 'x' }}"
   tasks:
     - debug:
         msg: "This is a debug message: {{ item }}{{ added_payload }}"
