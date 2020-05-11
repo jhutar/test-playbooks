@@ -7,5 +7,5 @@
     added_payload_string: "{{ added_payload|default(0)|int * 'x' }}"
   tasks:
     - debug:
-        msg: "This is a debug message: {{ item }}{{ added_payload }}"
+        msg: "This is a debug message: {{ item }}{{ added_payload_string }}"
       with_sequence: 'count={{ num_messages }}'
